@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "py-godel-numbers"
+version = "0.1.0"
+description = "My implementation of Gödel numbers in Python"
+authors = ["Pieter Marsman <pietermarsman@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+[tool.poetry.group.dev.dependencies]
+nox = "^2024.4.15"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
