@@ -1,3 +1,4 @@
+import functools
 from dataclasses import dataclass
 from typing import Dict
 
@@ -24,3 +25,11 @@ class Config:
                 "x": 12,
             }
         )
+
+    @functools.cached_property
+    def max_constant(self) -> int:
+        return max(self.constants.values())
+
+    @functools.cached_property
+    def reverse_constants(self) -> Dict[int, str]:
+        return {v: k for k, v in self.constants.items()}

@@ -19,4 +19,7 @@ def degodelize(n: int, config: Optional[Config] = None) -> str:
     if config is None:
         config = Config.default()
 
+    if n <= config.max_constant:
+        return config.reverse_constants[n]
+
     return ""
