@@ -6,7 +6,7 @@ import nox
 PYTHON_MODULES = ["py_godel_numbers", "tests", "noxfile.py"]
 
 
-@nox.session  # type: ignore[misc]
+@nox.session
 def format(session: nox.Session) -> None:
     install_poetry_groups(session, "--with=format")
     # Format files locally with ruff, but only check in cicd
@@ -18,7 +18,7 @@ def format(session: nox.Session) -> None:
         session.run("ruff", "format")
 
 
-@nox.session  # type: ignore[misc]
+@nox.session
 def types(session: nox.Session) -> None:
     install_poetry_groups(session, "--with=dev", "--with=types")
     session.run(
@@ -30,7 +30,7 @@ def types(session: nox.Session) -> None:
     )
 
 
-@nox.session  # type: ignore[misc]
+@nox.session
 def tests(session: nox.Session) -> None:
     install_poetry_groups(session, "--with=tests")
     session.run("pytest", env={"PYTHONPATH": "."})

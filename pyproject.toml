@@ -16,6 +16,7 @@ ruff = "^0.5.2"
 
 [tool.poetry.group.types.dependencies]
 mypy = "^1.10.1"
+pytest-mypy = "^0.10.3"
 
 [tool.poetry.group.tests.dependencies]
 pytest = "^8.2.2"
@@ -29,7 +30,6 @@ strict = true
 show_error_codes = true
 
 disallow_any_unimported = true
-disallow_any_expr = true
 disallow_any_decorated = true
 disallow_any_explicit = true
 
