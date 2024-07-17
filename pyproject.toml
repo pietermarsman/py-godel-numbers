@@ -11,6 +11,32 @@ python = "^3.10"
 [tool.poetry.group.dev.dependencies]
 nox = "^2024.4.15"
 
+[tool.poetry.group.format.dependencies]
+ruff = "^0.5.2"
+
+[tool.poetry.group.types.dependencies]
+mypy = "^1.10.1"
+
+[tool.poetry.group.tests.dependencies]
+pytest = "^8.2.2"
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.mypy]
+strict = true
+show_error_codes = true
+
+disallow_any_unimported = true
+disallow_any_expr = true
+disallow_any_decorated = true
+disallow_any_explicit = true
+
+warn_unused_ignores = true
+warn_no_return = true
+warn_unreachable = true
+
+[[tool.mypy.overrides]]
+module = ["nox"]
+ignore_missing_imports = true
