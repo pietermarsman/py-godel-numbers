@@ -57,3 +57,33 @@ def test_degodelize_constants(godel_number: int, constant: str) -> None:
 )
 def test_degodelize_variables(godel_number: int, variable: str) -> None:
     assert variable == degodelize(godel_number)
+
+
+@pytest.mark.parametrize(
+    "proof",
+    [
+        "~",
+        "V",
+        "⊃",
+        "∃",
+        "=",
+        "0",
+        "s",
+        "(",
+        ")",
+        ",",
+        "+",
+        "*",
+        "x",
+        "y",
+        "z",
+        "p",
+        "q",
+        "r",
+        "P",
+        "Q",
+        "R",
+    ],
+)
+def test_degodelize_godelize(proof: str) -> None:
+    assert proof == degodelize(godelize(proof))
