@@ -10,16 +10,16 @@ def godelize(s: str, config: Optional[Config] = None) -> int:
     if len(s) == 0:
         return 0
 
-    n = config.constants.get(s[0], 0)
+    n = config.characters.get(s[0], 0)
 
-    return n + godelize(s[1:])
+    return n + godelize(s[1:], config)
 
 
 def degodelize(n: int, config: Optional[Config] = None) -> str:
     if config is None:
         config = Config.default()
 
-    if n <= config.max_constant:
-        return config.reverse_constants[n]
+    if n in config.godel_numbers:
+        return config.godel_numbers[n]
 
     return ""

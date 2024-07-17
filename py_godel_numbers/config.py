@@ -6,6 +6,9 @@ from typing import Dict
 @dataclass
 class Config:
     constants: Dict[str, int]
+    numerical_variables: Dict[str, int]
+    sentential_variables: Dict[str, int]
+    predicate_variables: Dict[str, int]
 
     @classmethod
     def default(cls) -> "Config":
@@ -22,14 +25,34 @@ class Config:
                 ")": 9,
                 ",": 10,
                 "+": 11,
-                "x": 12,
-            }
+                "*": 12,
+            },
+            numerical_variables={
+                "x": 13,
+                "y": 17,
+                "z": 19,
+            },
+            sentential_variables={
+                "p": 13**2,
+                "q": 17**2,
+                "r": 19**2,
+            },
+            predicate_variables={
+                "P": 13**3,
+                "Q": 17**3,
+                "R": 19**3,
+            },
         )
 
     @functools.cached_property
-    def max_constant(self) -> int:
-        return max(self.constants.values())
+    def characters(self) -> Dict[str, int]:
+        return {
+            **self.constants,
+            **self.numerical_variables,
+            **self.sentential_variables,
+            **self.predicate_variables,
+        }
 
     @functools.cached_property
-    def reverse_constants(self) -> Dict[int, str]:
-        return {v: k for k, v in self.constants.items()}
+    def godel_numbers(self) -> Dict[int, str]:
+        return {v: k for k, v in self.characters.items()}

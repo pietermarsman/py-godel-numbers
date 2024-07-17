@@ -32,7 +32,7 @@ is linked to a unique Gödel number.
 | `)`           | $9$          | Punctuation mark |
 | `,`           | $10$         | Punctuation mark |
 | `+`           | $11$         | Plus             |
-| `x`           | $12$         | Times            |
+| `*`           | $12$         | Times            |
 
 With the Gödel number all the constant signs are uniquely identified. The `~`
 is identified by $1$. The `+` is the same as $11$.
