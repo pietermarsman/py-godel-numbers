@@ -56,3 +56,7 @@ class Config:
     @functools.cached_property
     def godel_numbers(self) -> Dict[int, str]:
         return {v: k for k, v in self.characters.items()}
+
+    @functools.cached_property
+    def min_godel_number(self) -> int:
+        return min(self.godel_numbers.keys())

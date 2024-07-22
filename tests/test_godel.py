@@ -12,7 +12,7 @@ def test_godelize_type() -> None:
     enumerate(["~", "V", "⊃", "∃", "=", "0", "s", "(", ")", ",", "+", "*"], 1),
 )
 def test_godelize_constants(godel_number: int, constant: str) -> None:
-    assert godel_number == godelize(constant)
+    assert godelize(constant) == godel_number
 
 
 @pytest.mark.parametrize(
@@ -30,12 +30,12 @@ def test_godelize_constants(godel_number: int, constant: str) -> None:
     ],
 )
 def test_godelize_variables(godel_number: int, variable: str) -> None:
-    assert godel_number == godelize(variable)
+    assert godelize(variable) == godel_number
 
 
-@pytest.mark.parametrize(("godel_number", "statement"), [(15932, "0=0")])
+@pytest.mark.parametrize(("godel_number", "statement"), [(243000000, "0=0")])
 def test_godelize_theorem(godel_number: int, statement: str) -> None:
-    assert godel_number == godelize(statement)
+    assert godelize(statement) == godel_number
 
 
 @pytest.mark.parametrize(
@@ -43,7 +43,7 @@ def test_godelize_theorem(godel_number: int, statement: str) -> None:
     enumerate(["~", "V", "⊃", "∃", "=", "0", "s", "(", ")", ",", "+", "*"], 1),
 )
 def test_degodelize_constants(godel_number: int, constant: str) -> None:
-    assert constant == degodelize(godel_number)
+    assert degodelize(godel_number) == constant
 
 
 @pytest.mark.parametrize(
@@ -61,7 +61,12 @@ def test_degodelize_constants(godel_number: int, constant: str) -> None:
     ],
 )
 def test_degodelize_variables(godel_number: int, variable: str) -> None:
-    assert variable == degodelize(godel_number)
+    assert degodelize(godel_number) == variable
+
+
+@pytest.mark.parametrize(("godel_number", "statement"), [(243000000, "0=0")])
+def test_degodelize_statement(godel_number: int, statement: str) -> None:
+    assert degodelize(godel_number) == statement
 
 
 @pytest.mark.parametrize(
@@ -91,4 +96,4 @@ def test_degodelize_variables(godel_number: int, variable: str) -> None:
     ],
 )
 def test_degodelize_godelize(statement: str) -> None:
-    assert statement == degodelize(godelize(statement))
+    assert degodelize(godelize(statement)) == statement

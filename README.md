@@ -41,7 +41,7 @@ Not only single characters can be translated into Gödel number. A multi
 character statement is translated to a unique Gödel number by adding
 powers of subsequent primes. The $n$'th character is represented by the
 $n$th prime to the power of the Gödel number of that character. For example,
-`0=0` is the same as $2^6 + 3^5 + 5^6 = 15932$. This is the only number for
+`0=0` is the same as $2^6 * 3^5 * 5^6 = 243000000$. This is the only number for
 this statement, and this is the only statement for this number.
 
 Besides constants, there are numerical variables. Numerical variables in a
@@ -117,7 +117,7 @@ This project just *Gödelizes* statements of the formal calculus "PM".
 >>> godelize("~")
 1
 >>> godelize("0=0")
-15932
+243000000
 ```
 
 And it *de-Gödelizes* these numbers into statements of PM.
@@ -126,7 +126,7 @@ And it *de-Gödelizes* these numbers into statements of PM.
 >>> from py_godel_numbers import degodelize
 >>> degodelize(1)
 "1"
->>> degodelize(15932)
+>>> degodelize(243000000)
 "0=0"
 ```
 
