@@ -1,6 +1,13 @@
+from itertools import repeat
 from typing import Optional
 
 from py_godel_numbers import Config
+from py_godel_numbers.arithmetic import power
+from py_godel_numbers.primes import primes
+
+
+class GodelizeException(ValueError):
+    pass
 
 
 def godelize(s: str, config: Optional[Config] = None) -> int:
@@ -8,11 +15,15 @@ def godelize(s: str, config: Optional[Config] = None) -> int:
         config = Config.default()
 
     if len(s) == 0:
-        return 0
+        raise GodelizeException("Cannot Gödelize empty statement")
 
-    n = config.characters.get(s[0], 0)
+    if len(s) == 1:
+        return config.characters.get(s[0], 0)
 
-    return n + godelize(s[1:], config)
+    exponents = list(map(godelize, iter(s), repeat(config)))
+    powers = list(map(power, primes(), exponents))
+    n = sum(powers)
+    return n
 
 
 def degodelize(n: int, config: Optional[Config] = None) -> str:

@@ -33,6 +33,11 @@ def test_godelize_variables(godel_number: int, variable: str) -> None:
     assert godel_number == godelize(variable)
 
 
+@pytest.mark.parametrize(("godel_number", "statement"), [(15932, "0=0")])
+def test_godelize_theorem(godel_number: int, statement: str) -> None:
+    assert godel_number == godelize(statement)
+
+
 @pytest.mark.parametrize(
     ("godel_number", "constant"),
     enumerate(["~", "V", "⊃", "∃", "=", "0", "s", "(", ")", ",", "+", "*"], 1),
@@ -60,7 +65,7 @@ def test_degodelize_variables(godel_number: int, variable: str) -> None:
 
 
 @pytest.mark.parametrize(
-    "proof",
+    "statement",
     [
         "~",
         "V",
@@ -85,5 +90,5 @@ def test_degodelize_variables(godel_number: int, variable: str) -> None:
         "R",
     ],
 )
-def test_degodelize_godelize(proof: str) -> None:
-    assert proof == degodelize(godelize(proof))
+def test_degodelize_godelize(statement: str) -> None:
+    assert statement == degodelize(godelize(statement))
