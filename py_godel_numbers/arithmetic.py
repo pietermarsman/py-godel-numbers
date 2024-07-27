@@ -16,13 +16,13 @@ def factorize(n: int) -> Dict[int, int]:
     if n < 0:
         raise FactorizeException(f"Cannot factorize negative number {n}")
 
-    if n == 1:
-        return Counter()
+    factors: Counter[int] = Counter[int]()
+    while True:
+        for factor in primes():
+            if n % factor == 0:
+                factors[factor] += 1
+                n //= factor
+                break
 
-    for factor in primes():
-        if n % factor == 0:
-            factors = factorize(n // factor)
-            factors[factor] += 1
+        if n == 1:
             return factors
-
-    raise FactorizeException(f"Cannot factorize number {n}")

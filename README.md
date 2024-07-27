@@ -95,8 +95,8 @@ than 12.
 | R                   | $19^3 = 6859$ | `(∃z)(x=y+sz)         |
 
 With these, writing `P` is exactly the same as $2197$. And writing `P⊃PVQ` is
-identified by $2^{2197} + 3^3 + 5^{2197} + 7^2 + 11^{4913} = $
-[a number with 5117 decimal digits]
+identified by $2^{2197} \times 3^3 \times 5^{2197} \times 7^2 \times 11^{4913} = $
+[a number with 7317 decimal digits]
 
 Writing these statements is interesting, but writing a sequence of statements
 allows to write proofs. Suppose there is a sequence of two statements, the
