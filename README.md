@@ -41,7 +41,7 @@ Not only single characters can be translated into Gödel number. A multi
 character statement is translated to a unique Gödel number by adding
 powers of subsequent primes. The $n$'th character is represented by the
 $n$th prime to the power of the Gödel number of that character. For example,
-`0=0` is the same as $2^6 * 3^5 * 5^6 = 243000000$. This is the only number for
+`0=0` is the same as $2^6 \times 3^5 \times 5^6 = 243000000$. This is the only number for
 this statement, and this is the only statement for this number.
 
 Besides constants, there are numerical variables. Numerical variables in a
@@ -57,9 +57,10 @@ subsequent prime numbers higher than 12.
 | `z`                | $19$         | `y`                   |
 
 So writing `x` is exactly the same as $13$, $19$ is exactly the same as writing
-`z`. And writing `x=s0` is the same as $2^{13} + 3^5 + 5^7 + 7^6 = 204209$. Like
-with constants, every statement with numerical variables is uniquely identified
-by a Gödel number and every Gödel number identifies a single statement.
+`z`. And writing `x=s0` is the same as
+$2^{13} \times 3^5 \times 5^7 \times 7^6 = 18296772480000000$. Like with constants, every
+statement with numerical variables is uniquely identified by a Gödel number and
+every Gödel number identifies a single statement.
 
 There are also sentential variables. These can be substituted by any statement
 (or sentence) of constants and numerical variables. That way, a sentential
@@ -67,11 +68,11 @@ variable can be used to state something about all numerical statements. There
 are three sentential variables (again, in this project). The sentential
 variables are linked to the squares of prime numbers higher than 12.
 
-| Sentential variable | Gödel number  | Possible substitution |
-|---------------------|---------------|-----------------------|
-| `p`                 | $13*13 = 169$ | `0=0`                 |
-| `q`                 | $17*17 = 289$ | `(∃x)(x=sy)`          |
-| `r`                 | $19*19 = 361$ | `p ⊃ q`               |
+| Sentential variable | Gödel number        | Possible substitution |
+|---------------------|----------------------|-----------------------|
+| `p`                 | $13 \times 13 = 169$ | `0=0`                 |
+| `q`                 | $17 \times 17 = 289$ | `(∃x)(x=sy)`          |
+| `r`                 | $19 \times 19 = 361$ | `p ⊃ q`               |
 
 With these, writing `p` is exactly the same as $169$. And `(∃x)(x=sy)` is
 identified by

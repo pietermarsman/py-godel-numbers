@@ -1,4 +1,3 @@
-from collections import Counter
 from itertools import repeat
 from math import prod
 from typing import Optional
@@ -42,5 +41,5 @@ def degodelize(n: int, config: Optional[Config] = None) -> str:
     if n in config.godel_numbers:
         return config.godel_numbers[n]
 
-    prime_counts = Counter(factorize(n)).values()
+    prime_counts = [c for _, c in sorted(factorize(n).items())]
     return "".join(map(degodelize, prime_counts, repeat(config)))
