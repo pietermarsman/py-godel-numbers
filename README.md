@@ -76,7 +76,7 @@ variables are linked to the squares of prime numbers higher than 12.
 
 With these, writing `p` is exactly the same as $169$. And `(∃x)(x=sy)` is
 identified by
-$2^8 + 3^{13} + 5^{13} + 7^9 + 11^8 + 13^{13} + 17^5 + 19^7 + 23^{17} + 29^9 = 141050039878047593796013$.
+$2^8 \times 3^{4} \times 5^{13} \times 7^9 \times 11^8 \times 13^{13} \times 17^5 \times 19^7 \times 23^{17} \times 29^9 = 172225505803959398742621651659678877886965404082311908389214945877004912002249920215937500000000$.
 A very big, yet unique number for this statement. Like with numerical variables,
 every statement with sentential variables is uniquely identified by a Gödel
 number and every Gödel number identifies a single statement.
