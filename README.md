@@ -76,8 +76,8 @@ variables are linked to the squares of prime numbers higher than 12.
 
 With these, writing `p` is exactly the same as $169$. And `(∃x)(x=sy)` is
 identified by
-$2^8 \times 3^{4} \times 5^{13} \times 7^9 \times 11^8 \times 13^{13} \times 17^5 \times 19^7 \times 23^{17} \times 29^9 = 172225505803959398742621651659678877886965404082311908389214945877004912002249920215937500000000$.
-A very big, yet unique number for this statement. Like with numerical variables,
+$2^8 \times 3^{4} \times 5^{13} \times 7^9 \times 11^8 \times 13^{13} \times 17^5 \times 19^7 \times 23^{17} \times 29^9 = $
+[a number with 96 decimal digits].  A very big, yet unique number for this statement. Like with numerical variables,
 every statement with sentential variables is uniquely identified by a Gödel
 number and every Gödel number identifies a single statement.
 
@@ -103,6 +103,19 @@ allows to write proofs. Suppose there is a sequence of two statements, the
 first one with Gödel number $m$ and the second one with Gödel number $n$. The
 Gödel number for the sequence is than $2^m + 3^n$. Hence, again the Gödel
 numbers of the parts are the powers of subsequent primes.
+
+```
+s0
+s0
+```
+
+The sequence of statements above translates to "1 thus 1". This is a rather small proof for a reason, any larger proof
+will run indefinitely when computing the integer powers. This proof is represented by the Gödel number
+$2^{2^7 \times 3^6} \times 3^{2^7 \times 3^6}=$
+[a number with 72610 decimal digits]. A very very big and unique number for this statement.
+
+So all constants, numerical variables, sentential variables, predicate variables, statements of multiple variables
+and proofs of multiple statements can be mapped to a unique Gödel number!
 
 ## So why would do this?
 
